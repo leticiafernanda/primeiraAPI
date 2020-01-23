@@ -1,5 +1,6 @@
 // importando os pacotes para uso no arquivo index.js
-const express = require('express');
+//usei o const para deixar a aplicação mais segura
+const express = require('express'); //retorna uma função para dentro do express
 const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -19,7 +20,7 @@ const data = [];
 // criação de rota que será acessada utilizando o método HTTP GET/
 // http://localhost:9000/
 app.get('/', (req, res) => {
-  return res.json({ data });
+  return res.json({ data }); //parametro de resposta, o send serve para enviar alguma coisa
 });
 
 // criação de rota que será acessada utilizando o método HTTP POST/
@@ -36,4 +37,6 @@ app.post('/add', (req, res) => {
 });
 
 // o servidor irá rodar dentro da porta 9000
-app.listen(9000, () => console.log('Express started at http://localhost:9000'));
+app.listen(9000, function(){
+  console.log('http://localhost:9000');
+});
